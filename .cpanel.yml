@@ -1,0 +1,7 @@
+# .cpanel.yml
+deployment:
+  tasks:
+    - export DEPLOY_DIR="$HOME/public_html"
+    - /bin/cp -R . "$DEPLOY_DIR"
+    - find "$DEPLOY_DIR" -type f -exec chmod 644 {} \;
+    - find "$DEPLOY_DIR" -type d -exec chmod 755 {} \;
